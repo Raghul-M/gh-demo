@@ -5,7 +5,7 @@ from PIL import Image
 profile_pic = Image.open("image.png")  # Replace with your profile picture file path
 
 # Introduction
-st.title("Raghul M. - Portfolio 😀")
+st.title("Raghul M. - Career Portfolio 😀")
 st.image(profile_pic, width=150)  # Display profile picture
 st.subheader("Software Quality Engineer @Redhat | Python Developer | DevOps Enthusiast | Founder of CareerPod")
 st.write("""
