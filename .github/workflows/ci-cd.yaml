@@ -20,7 +20,7 @@ jobs:
     
     - name: Build Docker image
       run: |
-        docker build -t raghulm/portfolio:${{ github.sha }} . 
+        docker build -t ${{ vars.DOCKER_USERNAME }}/portfolio:${{ github.sha }} .
     
 
     - name: Push Docker image
