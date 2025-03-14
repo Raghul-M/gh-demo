@@ -1,9 +1,8 @@
-name: CI/CD Deployment
-
+name : CI/CD Deplyment
 on: 
   push:
     branches:
-      - main
+      -  main 
 
 jobs:
   build:
@@ -18,15 +17,12 @@ jobs:
       with:
         username: ${{ vars.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
-
+    
     - name: Build Docker image
       run: |
-        IMAGE_NAME="${{ vars.DOCKER_USERNAME }}/streamlit-portfolio:${{ github.sha }}"
-        echo "Building Docker image: $IMAGE_NAME"
-        docker build -t $IMAGE_NAME .
+        docker build -t raghulm/portfolio:${{ github.sha }} . 
+    
 
     - name: Push Docker image
       run: |
-        IMAGE_NAME="${{ vars.DOCKER_USERNAME }}/streamlit-portfolio:${{ github.sha }}"
-        echo "Pushing Docker image: $IMAGE_NAME"
-        docker push $IMAGE_NAME
+        docker push ${{ vars.DOCKER_USERNAME }}/portfolio:${{ github.sha }}
