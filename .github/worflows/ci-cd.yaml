@@ -1,7 +1,7 @@
 name : CI/CD Deplyment
 on: 
   push:
-    brancehs:
+    branches:
       -  main 
 
 jobs:
