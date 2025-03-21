@@ -44,3 +44,13 @@ jobs:
       with:
         service-id: ${{ secrets.SERVICE_ID }} # Can be found as part of the Deploy Hook
         api-key: ${{ secrets.RENDER_API_KEY }} # Create your API key in Render Dashboard > Account Settings
+    - name: Send Email via Gmail
+      if: success()
+      uses: Raghul-M/gmail-sender-action@v1
+      with:
+          sender_email: ${{ secrets.GMAIL_SENDER }}
+          app_password: ${{ secrets.GMAIL_APP_PASSWORD }}
+          receiver_emails: ${{ secrets.RECIPIENTS }}
+          template_path: "templates/email_template.html"
+          subject: "Notification from GitHub Action"
+
