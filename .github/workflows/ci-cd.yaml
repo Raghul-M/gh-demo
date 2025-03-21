@@ -51,6 +51,6 @@ jobs:
           sender_email: ${{ secrets.GMAIL_SENDER }}
           app_password: ${{ secrets.GMAIL_APP_PASSWORD }}
           receiver_emails: ${{ secrets.RECIPIENTS }}
-          template_path: "templates/email_template.html"
+          template_path: "templates/index.html"
           subject: "Notification from GitHub Action"
 
